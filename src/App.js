@@ -5,11 +5,7 @@ import "./App.scss";
 function App() {
   return (
     <>
-      <header>
-        Hello
-        <h1>Hello</h1>
-        <h2>Something</h2>
-      </header>
+      <header></header>
       <main>
         <Homepage />
       </main>
