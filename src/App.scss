@@ -1,0 +1,32 @@
+:root {
+  // colors
+  --color-off-white: #eeecec;
+}
+
+body {
+  background-color: #181818;
+  color: #eeecec;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.container {
+  max-width: 82rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
