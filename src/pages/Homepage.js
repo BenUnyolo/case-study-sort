@@ -55,55 +55,59 @@ function Homepage() {
   };
 
   return (
-    <div className="container">
-      <h1>Work</h1>
-      {/* CATEGORIES */}
-      <div className="category-menu-container">
-        <div className="category-menu">
-          {/* all button */}
-          <div className="category-menu__btn-container">
-            <button
-              className={`category-menu__btn ${
-                selectedCategory === null ? "category-menu__btn--selected" : ""
-              }`}
-              aria-label={`show all case studies`}
-              onClick={() => setSelectedCategory(null)}
-            >
-              All
-            </button>
+    <div className="homepage-container">
+      <div className="container">
+        <h1 className="homepage-title">Work</h1>
+        {/* CATEGORIES */}
+        <div className="category-menu-container">
+          <div className="category-menu">
+            {/* all button */}
+            <div className="category-menu__btn-container">
+              <button
+                className={`category-menu__btn ${
+                  selectedCategory === null
+                    ? "category-menu__btn--selected"
+                    : ""
+                }`}
+                aria-label={`show all case studies`}
+                onClick={() => setSelectedCategory(null)}
+              >
+                All
+              </button>
+            </div>
+            {/* category buttons */}
+            {categories.map((item) => {
+              const { title, slug } = item;
+              return (
+                <div key={slug} className="category-menu__btn-container">
+                  <button
+                    className={`category-menu__btn ${
+                      slug === selectedCategory
+                        ? "category-menu__btn--selected"
+                        : ""
+                    }`}
+                    aria-label={`show only ${title} case studies`}
+                    onClick={() => setSelectedCategory(slug)}
+                  >
+                    {title}
+                  </button>
+                </div>
+              );
+            })}
           </div>
-          {/* category buttons */}
-          {categories.map((item) => {
-            const { title, slug } = item;
-            return (
-              <div key={slug} className="category-menu__btn-container">
-                <button
-                  className={`category-menu__btn ${
-                    slug === selectedCategory
-                      ? "category-menu__btn--selected"
-                      : ""
-                  }`}
-                  aria-label={`show only ${title} case studies`}
-                  onClick={() => setSelectedCategory(slug)}
-                >
-                  {title}
-                </button>
-              </div>
-            );
-          })}
         </div>
-      </div>
 
-      {/* CASE STUDIES */}
-      <div className="case-studies-container">
-        <div className="case-studies">
-          {sortedCaseStudies.map((item) => {
-            return (
-              <div key={item.id} className="case-studies__card">
-                <CaseStudyCard caseStudy={item} />
-              </div>
-            );
-          })}
+        {/* CASE STUDIES */}
+        <div className="case-studies-container">
+          <div className="case-studies">
+            {sortedCaseStudies.map((item) => {
+              return (
+                <div key={item.id} className="case-studies__card">
+                  <CaseStudyCard caseStudy={item} />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
