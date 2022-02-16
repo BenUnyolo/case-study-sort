@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./CaseStudyCard.scss";
 
 function CaseStudyCard({ caseStudy }) {
-  const { id, title, link, thumbnail, excerpt, categories } = caseStudy;
+  const { title, link, thumbnail, excerpt, categories } = caseStudy;
   return (
     <div className="case-study-card">
       {/* image */}

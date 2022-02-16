@@ -1,6 +1,7 @@
 .case-study-card {
   display: flex;
   height: 100%;
+  min-height: 15rem;
 
   &__image-container {
     width: 36%;

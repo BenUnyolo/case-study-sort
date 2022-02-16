@@ -8,12 +8,26 @@ import "./Homepage.scss";
 function Homepage() {
   const [caseStudies, setCaseStudies] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [sortedCaseStudies, setSortedCaseStudies] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
     fetchCaseStudies();
     fetchCategories();
   }, []);
+
+  useEffect(() => {
+    if (selectedCategory) {
+      setSortedCaseStudies(
+        caseStudies.filter((item) => {
+          // console.log(item.categories);
+          return item.categories[0]["slug"] === selectedCategory;
+        })
+      );
+    } else {
+      setSortedCaseStudies(caseStudies);
+    }
+  }, [selectedCategory, caseStudies, categories]);
 
   const fetchCaseStudies = async () => {
     try {
@@ -83,7 +97,7 @@ function Homepage() {
       {/* CASE STUDIES */}
       <div className="case-studies-container">
         <div className="case-studies">
-          {caseStudies.map((item) => {
+          {sortedCaseStudies.map((item) => {
             return (
               <div key={item.id} className="case-studies__card">
                 <CaseStudyCard caseStudy={item} />
