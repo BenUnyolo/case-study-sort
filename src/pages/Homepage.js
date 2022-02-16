@@ -43,6 +43,7 @@ function Homepage() {
   return (
     <div className="container">
       <h1>Work</h1>
+      {/* CATEGORIES */}
       <div className="category-menu-container">
         <div className="category-menu">
           {/* all button */}
@@ -79,13 +80,18 @@ function Homepage() {
         </div>
       </div>
 
-      {caseStudies.map((item) => {
-        return (
-          <div key={item.id}>
-            <CaseStudyCard caseStudy={item} />
-          </div>
-        );
-      })}
+      {/* CASE STUDIES */}
+      <div className="case-studies-container">
+        <div className="case-studies">
+          {caseStudies.map((item) => {
+            return (
+              <div key={item.id} className="case-studies__card">
+                <CaseStudyCard caseStudy={item} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
