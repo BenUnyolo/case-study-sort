@@ -3,8 +3,6 @@ import axios from "axios";
 
 import CaseStudyCard from "../components/CaseStudyCard";
 
-// import "./Homepage.scss";
-
 function Homepage() {
   const [caseStudies, setCaseStudies] = useState([]);
   const [caseStudiesError, setCaseStudiesError] = useState(false);

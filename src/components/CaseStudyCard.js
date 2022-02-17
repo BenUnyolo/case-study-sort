@@ -1,7 +1,5 @@
 import PropTypes from "prop-types";
 
-// import "./CaseStudyCard.scss";
-
 import placeholder from "../assets/placeholder-image.jpg";
 
 function CaseStudyCard({ caseStudy }) {
