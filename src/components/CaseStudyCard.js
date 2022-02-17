@@ -59,14 +59,14 @@ function CaseStudyCard({ caseStudy }) {
 }
 
 CaseStudyCard.propTypes = {
-  caseStudy: {
+  caseStudy: PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
     link: PropTypes.string,
-    thumbnail: PropTypes.string,
-    excerpt: PropTypes.string,
+    thumbnail: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    excerpt: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     categories: PropTypes.array,
-  },
+  }),
 };
 
 export default CaseStudyCard;

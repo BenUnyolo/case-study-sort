@@ -7,6 +7,7 @@ import CaseStudyCard from "../components/CaseStudyCard";
 
 function Homepage() {
   const [caseStudies, setCaseStudies] = useState([]);
+  const [caseStudiesError, setCaseStudiesError] = useState(false);
   const [categories, setCategories] = useState([]);
   const [sortedCaseStudies, setSortedCaseStudies] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -20,7 +21,6 @@ function Homepage() {
     if (selectedCategory) {
       setSortedCaseStudies(
         caseStudies.filter((item) => {
-          // console.log(item.categories);
           return item.categories[0]["slug"] === selectedCategory;
         })
       );
@@ -34,10 +34,9 @@ function Homepage() {
       const res = await axios.get(
         `${process.env.REACT_APP_API_URL}/case-studies`
       );
-      console.log(res);
       setCaseStudies(res.data["case-studies"]);
     } catch (err) {
-      // TODO add error
+      setCaseStudiesError(true);
       console.log(err.response.data);
     }
   };
@@ -49,7 +48,6 @@ function Homepage() {
       );
       setCategories(res.data["categories"]);
     } catch (err) {
-      // TODO add error
       console.log(err.response.data);
     }
   };
@@ -99,15 +97,25 @@ function Homepage() {
 
         {/* CASE STUDIES */}
         <div className="case-studies-container">
-          <div className="case-studies">
-            {sortedCaseStudies.map((item) => {
-              return (
-                <div key={item.id} className="case-studies__card">
-                  <CaseStudyCard caseStudy={item} />
-                </div>
-              );
-            })}
-          </div>
+          {sortedCaseStudies.length > 0 && (
+            <div className="case-studies">
+              {sortedCaseStudies.map((item) => {
+                return (
+                  <div key={item.id} className="case-studies__card">
+                    <CaseStudyCard caseStudy={item} />
+                  </div>
+                );
+              })}
+            </div>
+          )}
+          {sortedCaseStudies.length === 0 && caseStudiesError ? (
+            <h2>
+              Sorry, there was an error getting the case studies! Please try
+              refreshing the page in a few minutes.
+            </h2>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
