@@ -6,8 +6,8 @@
 .btn-1-loop-inner {
   display: inline-block;
   height: 100%;
-  border: 1px solid var(--color-off-white);
-  color: var(--color-off-white);
+  border: 1px solid $off-white;
+  color: $off-white;
   font-size: 0.75rem;
   text-decoration: none;
   font-weight: 700;
@@ -17,7 +17,7 @@
 }
 
 .btn-1-loop-inner:hover {
-  color: var(--color-highlight);
+  color: $turquoise;
 }
 
 .btn-1-loop-container:before,
@@ -26,7 +26,7 @@
 .btn-1-loop-inner:after {
   content: "";
   position: absolute;
-  background: var(--color-highlight);
+  background: $turquoise;
 }
 
 .btn-1-loop-container:before {

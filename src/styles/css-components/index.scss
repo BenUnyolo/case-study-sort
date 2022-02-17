@@ -1,0 +1,16 @@
+a.btn-1 {
+  display: inline-block;
+  color: $off-white;
+  background-color: $off-black;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid $off-white;
+  padding: 0.5rem 0.75rem;
+
+  &:visited {
+    color: $off-white;
+  }
+}

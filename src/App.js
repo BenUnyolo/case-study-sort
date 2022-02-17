@@ -1,7 +1,5 @@
 import Homepage from "./pages/Homepage";
 
-import "./App.scss";
-
 function App() {
   return (
     <>

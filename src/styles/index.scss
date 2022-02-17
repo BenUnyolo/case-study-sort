@@ -1,2 +1,23 @@
-@import "./base.scss";
-@import "./link_draw_border.scss";
+@import-normalize;
+
+// variables
+@import "./variables";
+
+// mixins
+@import "./mixins";
+
+// base styles
+@import "./base";
+
+// css components
+@import "./css-components";
+@import "./css-components/link_draw_border";
+
+// utilities
+@import "./utilities";
+
+// pages
+@import "./pages/Homepage";
+
+// react components
+@import "./react-components/CaseStudyCard";

@@ -1,0 +1,14 @@
+.container {
+  max-width: 82rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(2%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

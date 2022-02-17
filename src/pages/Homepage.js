@@ -3,7 +3,7 @@ import axios from "axios";
 
 import CaseStudyCard from "../components/CaseStudyCard";
 
-import "./Homepage.scss";
+// import "./Homepage.scss";
 
 function Homepage() {
   const [caseStudies, setCaseStudies] = useState([]);

@@ -1,14 +1,20 @@
-@import-normalize;
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+:root {
+  // colors
+  // --color-off-white: #eeecec;
+  --color-off-black: #181818;
+  // --color-highlight: #4ff2a4;
+}
 
 * {
   box-sizing: border-box;
   word-break: break-word;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,4 +22,46 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+body {
+  background-color: $off-black;
+  color: #eeecec;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.375rem;
+  line-height: 2rem;
+  font-weight: 900;
+
+  @include lg {
+    font-size: 1.875rem;
+    line-height: 2.1875rem;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
