@@ -30,11 +30,18 @@
 
   display: flex;
   flex-wrap: wrap;
-  margin: -0.625rem;
-  // padding: 0.625rem;
+  margin: -0.25rem;
+
+  @media screen and (min-width: 640px) {
+    margin: -0.625rem;
+  }
 
   &__btn-container {
-    padding: 0.625rem;
+    padding: 0.25rem;
+
+    @media screen and (min-width: 640px) {
+      padding: 0.625rem;
+    }
   }
 
   &__btn {
@@ -45,6 +52,12 @@
     color: var(--color-off-white);
     text-transform: uppercase;
     font-weight: 500;
+    text-align: left;
+    transition: color 0.2s linear;
+
+    &:hover {
+      color: var(--color-highlight);
+    }
 
     &--selected {
       border: 1px solid #ffffff;

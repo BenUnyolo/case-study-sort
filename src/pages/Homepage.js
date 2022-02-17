@@ -60,7 +60,7 @@ function Homepage() {
         <h1 className="homepage-title">Work</h1>
         {/* CATEGORIES */}
         <div className="category-menu-container">
-          <div className="category-menu">
+          <div className="category-menu" aria-label="case study categories">
             {/* all button */}
             <div className="category-menu__btn-container">
               <button

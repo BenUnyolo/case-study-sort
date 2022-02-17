@@ -1,0 +1,78 @@
+.btn-1-loop-container {
+  display: inline-block;
+  position: relative;
+}
+
+.btn-1-loop-inner {
+  display: inline-block;
+  height: 100%;
+  border: 1px solid var(--color-off-white);
+  color: var(--color-off-white);
+  font-size: 0.75rem;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.3s linear;
+}
+
+.btn-1-loop-inner:hover {
+  color: var(--color-highlight);
+}
+
+.btn-1-loop-container:before,
+.btn-1-loop-container:after,
+.btn-1-loop-inner:before,
+.btn-1-loop-inner:after {
+  content: "";
+  position: absolute;
+  background: var(--color-highlight);
+}
+
+.btn-1-loop-container:before {
+  width: 1px;
+  height: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.btn-1-loop-container:after {
+  height: 1px;
+  width: 0;
+  top: 0;
+  left: 0;
+}
+
+.btn-1-loop-inner:before {
+  width: 1px;
+  height: 0;
+  top: 0;
+  right: 0;
+}
+
+.btn-1-loop-inner:after {
+  height: 1px;
+  width: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.btn-1-loop-container:hover:before {
+  height: 100%;
+  transition: all 0.15s linear;
+}
+
+.btn-1-loop-container:hover:after {
+  width: 100%;
+  transition: all 0.15s linear 0.15s;
+}
+
+.btn-1-loop-container:hover .btn-1-loop-inner:before {
+  height: 100%;
+  transition: all 0.15s linear 0.3s;
+}
+
+.btn-1-loop-container:hover .btn-1-loop-inner:after {
+  width: 100%;
+  transition: all 0.15s linear 0.45s;
+}
