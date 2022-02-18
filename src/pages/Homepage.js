@@ -56,9 +56,9 @@ function Homepage() {
         <h1 className="homepage-title">Work</h1>
         {/* CATEGORIES */}
         <div className="category-menu-container">
-          <div className="category-menu" aria-label="case study categories">
+          <ul className="category-menu" aria-label="case study categories">
             {/* all button */}
-            <div className="category-menu__btn-container">
+            <li className="category-menu__btn-container">
               <button
                 className={`category-menu__btn ${
                   selectedCategory === null
@@ -70,12 +70,12 @@ function Homepage() {
               >
                 All
               </button>
-            </div>
+            </li>
             {/* category buttons */}
             {categories.map((item) => {
               const { title, slug } = item;
               return (
-                <div key={slug} className="category-menu__btn-container">
+                <li key={slug} className="category-menu__btn-container">
                   <button
                     className={`category-menu__btn ${
                       slug === selectedCategory
@@ -87,10 +87,10 @@ function Homepage() {
                   >
                     {title}
                   </button>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
 
         {/* CASE STUDIES */}

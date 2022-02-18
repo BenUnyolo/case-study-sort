@@ -31,6 +31,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: -0.25rem;
+  padding: 0;
 
   @include sm {
     margin: -0.625rem;
@@ -38,6 +39,7 @@
 
   &__btn-container {
     padding: 0.25rem;
+    list-style-type: none;
 
     @include sm {
       padding: 0.625rem;
