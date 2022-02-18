@@ -11,7 +11,7 @@ function CaseStudyCard({ caseStudy }) {
         <img
           src={thumbnail ? thumbnail : placeholder}
           className="case-study-card__image"
-          alt=""
+          alt={thumbnail ? `image for ${title}` : "placeholder image"}
         ></img>
       </div>
       <div className="case-study-card__info">
